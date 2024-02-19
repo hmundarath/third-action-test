@@ -11,15 +11,15 @@ jobs:
               uses: actions/setup-node@v3
               with:
                 node-version: 18
-
-            - name: Lint test
-              run: npm lint
-
+                
             - name: Install dependencies
               run: npm ci
 
+            - name: Lint test
+              run: npm run lint
+
             - name: Run tests
-              run: npm test
+              run: npm run test
 
             - name: Build Project
               run: npm run build
