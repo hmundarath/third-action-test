@@ -1,0 +1,10 @@
+name: Issue event test
+on: 
+    issues:
+        types: [opened, edited, milestoned]
+jobs:
+    issue_test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo the issue 
+              run: ${{ toJson(github.event_name) }}
